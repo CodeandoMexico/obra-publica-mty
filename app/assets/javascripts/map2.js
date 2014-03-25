@@ -16,9 +16,18 @@
 
 
 */
-jQuery(function($){
-var rsr = Raphael('map', 792, 612.01892);
 
+jQuery(function($){
+
+$("nav").hide();
+$(".open-nav").click(function() {
+  $("nav").slideToggle();
+  $("nav ul").toggleClass("open");
+  $(".open-nav").toggleClass("close")
+});
+
+var rsr = Raphael('map', 792, 612.01892);
+rsr.setViewBox(0,0, 850, 850, true);
 rsr.safari(); //para el rendering problem con safari
 var label = rsr.popup(0,0, "").hide(); 
 
