@@ -1,0 +1,33 @@
+<h1>Listing obras</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Monto</th>
+      <th>Status</th>
+      <th>Avance</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @obras.each do |obra| %>
+      <tr>
+        <td><%= obra.name %></td>
+        <td><%= obra.monto %></td>
+        <td><%= obra.status %></td>
+        <td><%= obra.avance %></td>
+        <td><%= link_to 'Show', obra %></td>
+        <td><%= link_to 'Edit', edit_obra_path(obra) %></td>
+        <td><%= link_to 'Destroy', obra, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Obra', new_obra_path %>
