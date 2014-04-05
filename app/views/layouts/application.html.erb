@@ -1,31 +1,21 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>ObraPublicaMty</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-	<nav>
-  <div class="inner">
-    <ul>
-      <li><a href="">¿Quiénes Somos?</a></li>
-      <li><a href="">Metodología</a></li>
-    </ul>
-  </div>
-</nav>
-<header>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <div class="inner">
-    <div id="logo"><img class="logo" src="/assets/logo.png"/></div>
-    <div class="open-nav">
-    <i></i>
-    </div>
-  </div>
-</header>
+    <title><%= content_for?(:title) ? yield(:title) : "Obras Públicas" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <%= render 'layouts/nav' %>
+    <%= yield %>
     
-<%= yield %>
-
-</body>
+  </body>
 </html>
