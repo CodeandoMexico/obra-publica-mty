@@ -5,6 +5,8 @@ class MunicipiosController < ApplicationController
   # GET /municipios.json
   def index
     @municipios = Municipio.all
+    @proveedors = Provider.all
+    @obras = Obra.all
   end
 
   # GET /municipios/1
@@ -35,6 +37,17 @@ class MunicipiosController < ApplicationController
         format.json { render json: @municipio.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+
+  def showProv
+    @municipio = Municipio.find(params[:id])
+    @prov = Provider.where(:municipio_id => params[:id])
+  end
+
+  def showObra
+    @municipio = Municipio.find(params[:id])
+    @obras = Obra.where(:municipio_id => params[:id])
   end
 
   # PATCH/PUT /municipios/1

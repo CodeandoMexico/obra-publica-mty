@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140325060121) do
+ActiveRecord::Schema.define(version: 20140407051244) do
 
   create_table "municipios", force: true do |t|
     t.string   "name"
@@ -20,11 +20,33 @@ ActiveRecord::Schema.define(version: 20140325060121) do
     t.datetime "updated_at"
   end
 
+  create_table "municipios_providers", id: false, force: true do |t|
+    t.integer "municipio_id", null: false
+    t.integer "provider_id",  null: false
+  end
+
+  add_index "municipios_providers", ["municipio_id", "provider_id"], name: "index_municipios_providers_on_municipio_id_and_provider_id", unique: true
+
+  create_table "municipios_providers_joins", id: false, force: true do |t|
+    t.integer "municipio_id"
+    t.integer "provider_id"
+  end
+
   create_table "obras", force: true do |t|
     t.string   "name"
     t.float    "monto"
     t.string   "status"
     t.integer  "avance"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "tipo"
+    t.integer  "municipio_id"
+  end
+
+  create_table "providers", force: true do |t|
+    t.string   "nombre"
+    t.float    "ganancias"
+    t.integer  "totalObras"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

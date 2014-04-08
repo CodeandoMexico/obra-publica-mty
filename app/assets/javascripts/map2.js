@@ -17,9 +17,10 @@
 
 */
 
-jQuery(function($){
+var ready = function(){
 
 $("nav").hide();
+console.log("Si esta aqui");
 $(".open-nav").click(function() {
   $("nav").slideToggle();
   $("nav ul").toggleClass("open");
@@ -27,6 +28,7 @@ $(".open-nav").click(function() {
 });
 
 var rsr = Raphael('map', 792, 612.01892);
+
 rsr.setViewBox(0,0, 850, 850, true);
 rsr.safari(); //para el rendering problem con safari
 var label = rsr.popup(0,0, "").hide(); 
@@ -225,6 +227,9 @@ for (var i = 0; i < municipios.length; i++) {
 	});
 }
 
-});
+};
+
+$(document).ready(ready);
+$(document).on('page:load', ready);
 
 	
