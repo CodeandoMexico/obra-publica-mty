@@ -50,6 +50,12 @@ class MunicipiosController < ApplicationController
     @obras = Obra.where(:municipio_id => params[:id])
   end
 
+  def showLicita
+    @municipio = Municipio.find(params[:id])
+    @obras = Obra.where(:municipio_id => params[:id])
+    
+  end
+
   # PATCH/PUT /municipios/1
   # PATCH/PUT /municipios/1.json
   def update

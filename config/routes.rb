@@ -5,6 +5,7 @@ ObraPublicaMty::Application.routes.draw do
   	member do
   		get "showProv"
   		get "showObra"
+  		get "showLicita"
   	end
   end
 

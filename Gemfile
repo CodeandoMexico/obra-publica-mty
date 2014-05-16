@@ -28,7 +28,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 #highcharts
-gem "highcharts-rails", "~> 3.0.0"
+gem 'highcharts-rails', '~> 4.0.1'
 
 #foundation
 gem 'foundation-rails'

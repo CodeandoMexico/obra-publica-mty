@@ -17,7 +17,10 @@
 
 */
 
+
+
 var ready = function(){
+
 
 $("nav").hide();
 console.log("Si esta aqui");
@@ -25,7 +28,147 @@ $(".open-nav").click(function() {
   $("nav").slideToggle();
   $("nav ul").toggleClass("open");
   $(".open-nav").toggleClass("close")
+
 });
+
+
+ var element = document.getElementById("prov_chart");
+
+ if (typeof (element) !== undefined && typeof (element) !== null && typeof (element) !== 'undefined' && element !== null) {
+     new Highcharts.Chart({
+            chart: {
+                renderTo:"prov_chart",
+                type:"bar"
+            },
+            title: {
+                text: 'Contratos por Proveedor'
+            },
+            xAxis: {
+                categories: ['Construcciones Dynamo, SA DE CV', 'SAGO CONSTRUCCIONES Y URBANIZACIONES, SA DE CV', 'CONSTRU-SHENSA, SA DE CV', 'DESARROLLO URBANO Y EXCAVACIONES, SA DE CV', 'CONSTRUCTORA JOMABE, SA DE CV', 'INNOVACIONES CANESA, SA DE CV', 'CONSTRUCTORA ROGACU, SA DE CV', 'ROLANDO TREVIÑO CONSTRUCCIONES, SA DE CV', 'DESARROLLO CONSTRUCTIVO Y URBANISTICO, SA DE CV', 'FOJA INGENIEROS CONSTRUCTORES, SA DE CV', 'ING. JOSÉ CARLOS LÓPEZ JUÁREZ', 'DESARROLLOS LOCSA, SA DE CV', 'CONSTRUCCIONES Y SERVICIOS MT, SA DE CV', 'GUARDA CONSTRUCCIONES Y URBANIZACIONES, SA DE CV', 'GERCER CONSTRUCCIONES, SA DE CV', 'TRANSCONSULT, SA DE CV', 'AGUI URBANISMO, SA DE CV', 'PAVIMENTOS Y CONSTRUCCIONES GARCAN, SA DE CV', 'ING. NESTOR GUERRERO SEGURA', 'PICO INFRAESTRUCTURA URBANA, SA DE CV', 'PROYECTOS Y CONSTRUCCIONES SCANDIO, SA DE CV', 'CONSTRUCCIONES Y PROYECTOS ALTA VISTA, SA DE CV', 'CONSTRUCCIONES Y ESTRUCTURALES CAMACHO, SA DE CV'],
+                title: {
+                    text: null
+                }
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Contratos',
+                    align: 'high'
+                },
+                labels: {
+                    overflow: 'justify'
+                }
+            },
+            tooltip: {
+                valueSuffix: ' contratos'
+            },
+            plotOptions: {
+                bar: {
+                    dataLabels: {
+                        enabled: true
+                    }
+                }
+            },
+            credits: {
+                enabled: false
+            },
+            series: [{
+                data: [5,1,2,3, 2,4,2, 3, 5, 4, 1, 2, 2, 1, 2, 1, 2, 1,1, 1, 2, 1, 2]
+            }]
+        });
+
+        new Highcharts.Chart({
+            chart: {
+                renderTo:"prov_monto",
+                type:"bar"
+            },
+            title: {
+                text: 'Montos por Proveedor'
+            },
+            xAxis: {
+                categories: ['Construcciones Dynamo, SA DE CV', 'SAGO CONSTRUCCIONES Y URBANIZACIONES, SA DE CV', 'CONSTRU-SHENSA, SA DE CV', 'DESARROLLO URBANO Y EXCAVACIONES, SA DE CV', 'CONSTRUCTORA JOMABE, SA DE CV', 'INNOVACIONES CANESA, SA DE CV', 'CONSTRUCTORA ROGACU, SA DE CV', 'ROLANDO TREVIÑO CONSTRUCCIONES, SA DE CV', 'DESARROLLO CONSTRUCTIVO Y URBANISTICO, SA DE CV', 'FOJA INGENIEROS CONSTRUCTORES, SA DE CV', 'ING. JOSÉ CARLOS LÓPEZ JUÁREZ', 'DESARROLLOS LOCSA, SA DE CV', 'CONSTRUCCIONES Y SERVICIOS MT, SA DE CV', 'GUARDA CONSTRUCCIONES Y URBANIZACIONES, SA DE CV', 'GERCER CONSTRUCCIONES, SA DE CV', 'TRANSCONSULT, SA DE CV', 'AGUI URBANISMO, SA DE CV', 'PAVIMENTOS Y CONSTRUCCIONES GARCAN, SA DE CV', 'ING. NESTOR GUERRERO SEGURA', 'PICO INFRAESTRUCTURA URBANA, SA DE CV', 'PROYECTOS Y CONSTRUCCIONES SCANDIO, SA DE CV', 'CONSTRUCCIONES Y PROYECTOS ALTA VISTA, SA DE CV', 'CONSTRUCCIONES Y ESTRUCTURALES CAMACHO, SA DE CV'],
+                title: {
+                    text: null
+                }
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Pesos',
+                    align: 'high'
+                },
+                labels: {
+                    overflow: 'justify'
+                }
+            },
+            tooltip: {
+                valueSuffix: ' pesos'
+            },
+            plotOptions: {
+                bar: {
+                    dataLabels: {
+                        enabled: true
+                    }
+                }
+            },
+            credits: {
+                enabled: false
+            },
+            series: [{
+                data: [49927440.60, 18589467.61, 18109711.75, 17076815.00, 17071580.37, 15268755.89, 10992541.28, 9983720.30, 9136936.36, 8679622.16, 8468875.41, 7883293.77, 6731152.25, 6638713.85, 6009812.75, 5742164.15, 5597766.09, 5249423.70, 5150130.83, 4735926.43, 4673436.68,4299355.85, 3183824.70]
+           }]
+        });
+ }
+ else{
+     console.log('element NOT exists');
+ }
+
+var elemento = document.getElementById("licita_chart");
+if (typeof (elemento) !== undefined && typeof (elemento) !== null && typeof (elemento) !== 'undefined' && elemento !== null) {
+
+    new Highcharts.Chart({
+            chart: {
+                renderTo:"licita_chart",
+                type:"bar"
+            },
+            title: {
+                text: 'Licitaciones por Obra'
+            },
+            xAxis: {
+                categories: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
+                title: {
+                    text: 'Licitaciones'
+                }
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Obras',
+                    align: 'high'
+                },
+                labels: {
+                    overflow: 'justify'
+                }
+            },
+            tooltip: {
+                valueSuffix: ' Obras'
+            },
+            plotOptions: {
+                bar: {
+                    dataLabels: {
+                        enabled: true
+                    }
+                }
+            },
+            credits: {
+                enabled: false
+            },
+            series: [{
+                data: [13,12,30, 3, 21, 6, 5, 2,1]
+            }]
+        });
+}
+        
 
 var rsr = Raphael('map', 792, 612.01892);
 
@@ -227,7 +370,11 @@ for (var i = 0; i < municipios.length; i++) {
 	});
 }
 
+
+
 };
+
+
 
 $(document).ready(ready);
 $(document).on('page:load', ready);
