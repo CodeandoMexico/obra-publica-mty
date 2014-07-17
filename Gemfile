@@ -32,10 +32,10 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
-#highcharts
+# highcharts
 gem 'highcharts-rails', '~> 4.0.1'
 
-#foundation
+# foundation
 gem 'foundation-rails'
 
 group :doc do
