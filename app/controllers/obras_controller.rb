@@ -62,13 +62,14 @@ class ObrasController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_obra
-      @obra = Obra.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def obra_params
-      params.require(:obra).permit(:name, :monto, :status, :avance)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_obra
+    @obra = Obra.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def obra_params
+    params.require(:obra).permit(:name, :monto, :status, :avance)
+  end
 end
