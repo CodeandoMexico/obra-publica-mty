@@ -1,0 +1,19 @@
+ <p id="notice"><%= notice %></p>
+ <h1 style="text-align:center"><%= @municipio.name %></h1>
+ <%= render 'buttonBar' %>
+ <h2 style="text-align:center">Obras</h2>
+
+<div class="row">
+	<div class="small-12">
+		<ul class="sticker-tiles">
+ 			<% @obras.each do |obra| %>
+ 				<li><a class="blue camera" href="#">
+ 						<div><b>Nombre:</b> <br/><%= obra.name %></div>
+ 						<br/>
+ 						<div><b>Monto:</b> <br/>$<%= obra.monto %></div>
+ 					</a>
+ 				</li>
+ 			<%end%>
+ 		</ul>
+ 	</div>
+</div>

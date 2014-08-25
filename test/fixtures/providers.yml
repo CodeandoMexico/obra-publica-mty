@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre: MyString
+  ganancias: 1.5
+  totalObras: 1
+
+two:
+  nombre: MyString
+  ganancias: 1.5
+  totalObras: 1
