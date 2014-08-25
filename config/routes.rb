@@ -3,9 +3,9 @@ ObraPublicaMty::Application.routes.draw do
 
   resources :municipios do
     member do
-      get 'showProv'
-      get 'showObra'
-      get 'showLicita'
+      get 'proveedores'
+      get 'obras'
+      get 'licitaciones'
     end
   end
 

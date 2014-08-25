@@ -39,17 +39,17 @@ class MunicipiosController < ApplicationController
     end
   end
 
-  def showProv
+  def proveedores
     @municipio = Municipio.find(params[:id])
     @prov = Provider.where(municipio_id: params[:id])
   end
 
-  def showObra
+  def obras
     @municipio = Municipio.find(params[:id])
     @obras = Obra.where(municipio_id: params[:id])
   end
 
-  def showLicita
+  def licitaciones
     @municipio = Municipio.find(params[:id])
     @obras = Obra.where(municipio_id: params[:id])
   end
