@@ -9,4 +9,8 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-ObraPublicaMty::Application.config.secret_key_base = '7669ce749926e7c112b674400ca4e2717dc7f475403297352ddd10ec7d3cf03fe6dfec173b5387b6888c6ad6977851cee3b8a7159340093387573a300843ea7e'
+ObraPublicaMty::Application.config.secret_key_base = if Rails.env.production?
+  ENV['SECRET_KEY_BASE']
+else
+  ('x' * 30) # meets minimum requirement of 30 chars long
+end

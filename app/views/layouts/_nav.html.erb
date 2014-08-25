@@ -1,4 +1,4 @@
-<nav = "resToggle>
+<nav class="resToggle">
   <div class="inner">
     <ul>
       <li><a href="">¿Quiénes Somos?</a></li>
@@ -7,11 +7,10 @@
   </div>
 </nav>
 <header>
-
   <div class="inner">
-    <div id="logo"><%= link_to "<img class='logo' src='/assets/logo.png' />".html_safe, root_path%></div>
+    <div id="logo"><%= link_to image_tag('logo_small.png', class: 'logo'), root_path %></div>
     <div class="open-nav">
-    <i></i>
+      <i></i>
     </div>
   </div>
 </header>

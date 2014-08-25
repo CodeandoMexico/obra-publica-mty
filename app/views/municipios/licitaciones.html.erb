@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+<h1 style="text-align:center"><%= @municipio.name %></h1>
+<%= render 'buttonBar' %>
+<h2 style="text-align:center">Licitaciones</h2>
+
+<% if @municipio.id == 9 %>
+  <div style="align: center; padding-left: 10px; padding-right:20px; "id="licita_chart"></div>
+<% end %>
+<div class="row">
+  <div class="small-12">
+    <ul class="sticker-tiles">
+      <% @obras.each do |obra| %>
+        <li>
+          <a class="blue camera" href="#">
+            <div><b>Nombre:</b><br/><%= obra.name %></div>
+            <br/>
+            <div>
+              <b>Participantes:</b><br/>
+              <% if @municipio.id == 9 %>
+                <%= obra.participantes %>
+              <% else %>
+                No disponible
+              <% end %>
+            </div>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

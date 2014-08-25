@@ -4,9 +4,6 @@ class MunicipiosController < ApplicationController
   # GET /municipios
   # GET /municipios.json
   def index
-    @municipios = Municipio.all
-    @proveedors = Provider.all
-    @obras = Obra.all
   end
 
   # GET /municipios/1
@@ -39,21 +36,19 @@ class MunicipiosController < ApplicationController
     end
   end
 
-
-  def showProv
+  def proveedores
     @municipio = Municipio.find(params[:id])
-    @prov = Provider.where(:municipio_id => params[:id])
+    @prov = Provider.where(municipio_id: params[:id])
   end
 
-  def showObra
+  def obras
     @municipio = Municipio.find(params[:id])
-    @obras = Obra.where(:municipio_id => params[:id])
+    @obras = Obra.where(municipio_id: params[:id])
   end
 
-  def showLicita
+  def licitaciones
     @municipio = Municipio.find(params[:id])
-    @obras = Obra.where(:municipio_id => params[:id])
-    
+    @obras = Obra.where(municipio_id: params[:id])
   end
 
   # PATCH/PUT /municipios/1
@@ -81,13 +76,14 @@ class MunicipiosController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_municipio
-      @municipio = Municipio.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def municipio_params
-      params.require(:municipio).permit(:name)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_municipio
+    @municipio = Municipio.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def municipio_params
+    params.require(:municipio).permit(:name)
+  end
 end
