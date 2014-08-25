@@ -4,9 +4,6 @@ class MunicipiosController < ApplicationController
   # GET /municipios
   # GET /municipios.json
   def index
-    @municipios = Municipio.all
-    @proveedors = Provider.all
-    @obras = Obra.all
   end
 
   # GET /municipios/1
